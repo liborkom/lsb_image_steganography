@@ -1,0 +1,595 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>920</width>
+    <height>830</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>680</width>
+    <height>800</height>
+   </size>
+  </property>
+  <property name="font">
+   <font>
+    <pointsize>15</pointsize>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>LSB Image Steganography</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(54, 54, 54);
+color: rgb(230, 230, 230);</string>
+  </property>
+  <property name="locale">
+   <locale language="English" country="UnitedStates"/>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <layout class="QVBoxLayout" name="verticalLayoutMain">
+      <item>
+       <widget class="QLabel" name="labelTitle">
+        <property name="font">
+         <font>
+          <pointsize>30</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>LSB Image Steganography</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QFrame" name="frameOriginalImageSection">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(50, 50, 50);</string>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayoutOriginalImage">
+         <item>
+          <widget class="QLabel" name="labelOriginalImagePreview">
+           <property name="minimumSize">
+            <size>
+             <width>250</width>
+             <height>200</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>20</pointsize>
+            </font>
+           </property>
+           <property name="toolTip">
+            <string>Preview of the loaded image</string>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(70, 70, 70);</string>
+           </property>
+           <property name="text">
+            <string>Load an image first</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QFrame" name="frameOriginalImage">
+           <layout class="QVBoxLayout" name="layout_image_info">
+            <item>
+             <widget class="QPushButton" name="buttonLoadImage">
+              <property name="font">
+               <font>
+                <pointsize>20</pointsize>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background-color: rgb(70, 70, 70);</string>
+              </property>
+              <property name="text">
+               <string>Load image</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayoutImageInfo">
+              <item>
+               <layout class="QVBoxLayout" name="verticalLayoutImageInfoLabels">
+                <item>
+                 <widget class="QLabel" name="labelFileName">
+                  <property name="font">
+                   <font>
+                    <pointsize>20</pointsize>
+                   </font>
+                  </property>
+                  <property name="toolTip">
+                   <string>Name of the file (without extension)</string>
+                  </property>
+                  <property name="text">
+                   <string>File name</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="labelExtension">
+                  <property name="font">
+                   <font>
+                    <pointsize>20</pointsize>
+                   </font>
+                  </property>
+                  <property name="toolTip">
+                   <string>Extension/type of file of the loaded image</string>
+                  </property>
+                  <property name="text">
+                   <string>Extension</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="labelDimensions">
+                  <property name="font">
+                   <font>
+                    <pointsize>20</pointsize>
+                   </font>
+                  </property>
+                  <property name="toolTip">
+                   <string>Dimensions of the loaded image in pixels</string>
+                  </property>
+                  <property name="text">
+                   <string>Dimensions</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="labelAbsolutePath">
+                  <property name="font">
+                   <font>
+                    <pointsize>20</pointsize>
+                   </font>
+                  </property>
+                  <property name="toolTip">
+                   <string>Absolute path to the loaded image</string>
+                  </property>
+                  <property name="text">
+                   <string>Absolute path</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="labelFileSize">
+                  <property name="font">
+                   <font>
+                    <pointsize>20</pointsize>
+                   </font>
+                  </property>
+                  <property name="toolTip">
+                   <string>File size of the loaded image in Bytes</string>
+                  </property>
+                  <property name="text">
+                   <string>File size</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="labelColorMode">
+                  <property name="font">
+                   <font>
+                    <pointsize>20</pointsize>
+                   </font>
+                  </property>
+                  <property name="toolTip">
+                   <string>Color mode used in the loaded image</string>
+                  </property>
+                  <property name="text">
+                   <string>Color mode</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="labelCapacity">
+                  <property name="font">
+                   <font>
+                    <pointsize>20</pointsize>
+                   </font>
+                  </property>
+                  <property name="toolTip">
+                   <string>Number of characters encodable in the loaded image</string>
+                  </property>
+                  <property name="text">
+                   <string>Message capacity</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <widget class="Line" name="lineImageInfo">
+                <property name="styleSheet">
+                 <string notr="true">background-color: rgb(230, 230, 230);</string>
+                </property>
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <layout class="QVBoxLayout" name="verticalLayoutInfoValues">
+                <item>
+                 <widget class="QLineEdit" name="fieldFileName">
+                  <property name="font">
+                   <font>
+                    <pointsize>18</pointsize>
+                   </font>
+                  </property>
+                  <property name="toolTip">
+                   <string>Name of the file (without extension)</string>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">background-color: rgb(70, 70, 70);</string>
+                  </property>
+                  <property name="frame">
+                   <bool>false</bool>
+                  </property>
+                  <property name="readOnly">
+                   <bool>true</bool>
+                  </property>
+                  <property name="placeholderText">
+                   <string>Load an image first</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLineEdit" name="fieldExtension">
+                  <property name="font">
+                   <font>
+                    <pointsize>18</pointsize>
+                   </font>
+                  </property>
+                  <property name="toolTip">
+                   <string>Extension/type of file of the loaded image</string>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">background-color: rgb(70, 70, 70);</string>
+                  </property>
+                  <property name="frame">
+                   <bool>false</bool>
+                  </property>
+                  <property name="readOnly">
+                   <bool>true</bool>
+                  </property>
+                  <property name="placeholderText">
+                   <string>Load an image first</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLineEdit" name="fieldDimensions">
+                  <property name="font">
+                   <font>
+                    <pointsize>18</pointsize>
+                   </font>
+                  </property>
+                  <property name="toolTip">
+                   <string>Dimensions of the loaded image in pixels</string>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">background-color: rgb(70, 70, 70);</string>
+                  </property>
+                  <property name="frame">
+                   <bool>false</bool>
+                  </property>
+                  <property name="readOnly">
+                   <bool>true</bool>
+                  </property>
+                  <property name="placeholderText">
+                   <string>Load an image first</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLineEdit" name="fieldAbsolutePath">
+                  <property name="font">
+                   <font>
+                    <pointsize>18</pointsize>
+                   </font>
+                  </property>
+                  <property name="toolTip">
+                   <string>Absolute path to the loaded image</string>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">background-color: rgb(70, 70, 70);</string>
+                  </property>
+                  <property name="frame">
+                   <bool>false</bool>
+                  </property>
+                  <property name="readOnly">
+                   <bool>true</bool>
+                  </property>
+                  <property name="placeholderText">
+                   <string>Load an image first</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLineEdit" name="fieldFileSize">
+                  <property name="font">
+                   <font>
+                    <pointsize>18</pointsize>
+                   </font>
+                  </property>
+                  <property name="toolTip">
+                   <string>File size of the loaded image in Bytes</string>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">background-color: rgb(70, 70, 70);</string>
+                  </property>
+                  <property name="frame">
+                   <bool>false</bool>
+                  </property>
+                  <property name="readOnly">
+                   <bool>true</bool>
+                  </property>
+                  <property name="placeholderText">
+                   <string>Load an image first</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLineEdit" name="fieldColorMode">
+                  <property name="font">
+                   <font>
+                    <pointsize>18</pointsize>
+                   </font>
+                  </property>
+                  <property name="toolTip">
+                   <string>Color mode used in the loaded image</string>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">background-color: rgb(70, 70, 70);</string>
+                  </property>
+                  <property name="frame">
+                   <bool>false</bool>
+                  </property>
+                  <property name="readOnly">
+                   <bool>true</bool>
+                  </property>
+                  <property name="placeholderText">
+                   <string>Load an image first</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLineEdit" name="fieldCapacity">
+                  <property name="font">
+                   <font>
+                    <pointsize>18</pointsize>
+                   </font>
+                  </property>
+                  <property name="toolTip">
+                   <string>Number of characters encodable in the loaded image</string>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">background-color: rgb(70, 70, 70);</string>
+                  </property>
+                  <property name="frame">
+                   <bool>false</bool>
+                  </property>
+                  <property name="readOnly">
+                   <bool>true</bool>
+                  </property>
+                  <property name="placeholderText">
+                   <string>Load an image first</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QFrame" name="frameEncoding">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(50, 50, 50);</string>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayoutEncoding">
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayoutMessage">
+           <item>
+            <widget class="QPlainTextEdit" name="fieldMessage">
+             <property name="font">
+              <font>
+               <pointsize>20</pointsize>
+              </font>
+             </property>
+             <property name="toolTip">
+              <string>The message you want to encode in the loaded image</string>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(70, 70, 70);</string>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Sunken</enum>
+             </property>
+             <property name="lineWidth">
+              <number>1</number>
+             </property>
+             <property name="placeholderText">
+              <string>Message you want to encode in the loaded image</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="buttonEncodeMessage">
+             <property name="font">
+              <font>
+               <pointsize>20</pointsize>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(70, 70, 70);</string>
+             </property>
+             <property name="text">
+              <string>Encode this message</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayoutModifiedImage">
+           <item>
+            <widget class="QLabel" name="labelModifiedImagePreview">
+             <property name="enabled">
+              <bool>true</bool>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>250</width>
+               <height>200</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>20</pointsize>
+              </font>
+             </property>
+             <property name="toolTip">
+              <string>Preview of the modified image</string>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(70, 70, 70);</string>
+             </property>
+             <property name="text">
+              <string>Encode a message first</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="buttonSaveImage">
+             <property name="enabled">
+              <bool>true</bool>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>20</pointsize>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(70, 70, 70);</string>
+             </property>
+             <property name="text">
+              <string>Save encoded image</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QFrame" name="frameDecoding">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(50, 50, 50);</string>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayoutDecoding">
+         <item>
+          <widget class="QPushButton" name="buttonDecodeImage">
+           <property name="font">
+            <font>
+             <pointsize>20</pointsize>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(70, 70, 70);</string>
+           </property>
+           <property name="text">
+            <string>Find a hidden message in loaded image</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPlainTextEdit" name="fieldResult">
+           <property name="font">
+            <font>
+             <pointsize>20</pointsize>
+            </font>
+           </property>
+           <property name="toolTip">
+            <string>This is where the hidden message found in the loaded image will be displayed</string>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(70, 70, 70);</string>
+           </property>
+           <property name="readOnly">
+            <bool>true</bool>
+           </property>
+           <property name="placeholderText">
+            <string>Discovered message will be displayed here</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>920</width>
+     <height>24</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
